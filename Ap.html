@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> A P</title>
+  <style>
+   div{
+     height: auto ;
+     width: 200px;
+     margin: 20px;
+     padding : 15px;
+     font-size: 20px;
+     background-color: lightskyblue;
+     border: 2px solid black ;
+     border-radius: 10px;
+     justify-content: center;
+     
+     
+   } 
+   input {
+     width: 100px;
+   }
+   p{
+     color: red;
+     font-size: 10px;
+   }
+   button{
+     height: 30px;
+     width: 130px;
+     color: white;
+     background-color: dodgerblue;
+     border: 3px solid black;
+     border-radius: 5px;
+     margin-left: 20px;
+     font-size: 15px;
+   }
+  </style>
+</head>
+
+<body>
+  <div>
+a <input type="number" id="a"><br>
+<p id="mta"></p>
+d <input type="number" id="d"><br>
+<p id="mtd"></p>
+n <input type="number" id="n"><br>
+<p id="mtn"></p>
+an <input type="number" id="an"> <br>
+<p id="mtan"></p>
+
+<button onclick="answer()"> Find Answer</button>
+<h2 id="res"></h2>
+</div>
+
+<!--script-->
+
+
+<script>
+function answer(){
+var a = document.getElementById('a').value ;
+var d = document.getElementById('d').value ;
+var n = document.getElementById('n').value ;
+var an = document.getElementById('an').value ;
+var an1 = n-1;
+var an2 = d*an1;
+var d1 = an-a;
+var n1 = d1/d;
+//a
+var a1 = an-an2;
+//n
+var nf = parseInt(n1)+parseInt(1);
+//d
+
+var df = d1/an1;
+//an
+var an3 = parseInt(a)+parseInt(an2);
+ if(n<0){
+   
+      document.getElementById('res').innerText=' n can not be in minus or zero';}
+      
+      else{
+if(d==0 && a==0 && n==0 && an==0){
+    
+      document.getElementById('res').innerText=' Atleast 3 inputs are required';
+        
+      }
+
+else  if(a==0){
+    document.getElementById('mta').innerText= 'you didn‘t input a' ;
+      document.getElementById('res').innerText='a = '+ a1;
+     
+  }
+  else  if(d==0){
+    document.getElementById('mtd').innerText= 'you didn‘t input d' ;
+      document.getElementById('res').innerText='d = '+ df;
+    
+  }else  if(n==0){
+    document.getElementById('mtn').innerText= 'you didn‘t input n' ;
+      document.getElementById('res').innerText='n = '+ nf;
+    
+  }else  if(an==0){
+    document.getElementById('mtan').innerText= 'you didn‘t input an' ;
+      document.getElementById('res').innerText='an = '+ an3;
+    
+  }
+   
+    
+    
+  else{
+    document.getElementsByTagName('p').innerText= "";
+  
+    
+  }
+}}
+  
+</script>
+</body>
+
+</html>
